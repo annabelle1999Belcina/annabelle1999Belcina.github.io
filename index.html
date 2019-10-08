@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mqtt</title>
+    <title>IOT SWITCH</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -15,61 +15,8 @@
 
 
 <body>
-    <h2>MQTT</h2>
+    <h2>IOT SWITCH</h2>
     <div class="container">
-        <br>
-        <div class="row">
-            
-            <!-- column 2 -->
-            <div class="col">
-                <div class="card">
-                    <div class="container">
-                        <center>
-                            <div class="card-header">
-                                <div class="text-center h4">Publisher</div>
-                            </div>
-                        </center>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label class="text-left">Topic:</label>
-                                <input type="text" class="form-control" id="topic">
-                            </div>
-                            <div class="form-group">
-                                <label class="text-justify">Message:</label>
-                                <input type="text" class="form-control" id="message">
-                            </div>
-                            <center>
-                                <button id="btn-pub">Publish</button></center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- column 3 -->
-            <div class="col">
-                <div class="card">
-                    <div class="container">
-                        <center>
-                            <div class="card-header">
-                                <div class="text-center h4">Subscriber</div>
-                            </div>
-                        </center>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label class="text-left">Topic:</label>
-                                <input type="text" class="form-control" id="topic-sub">
-                            </div>
-
-                            <center>
-                                <button id="btn-sub" >Subscribe</button>
-                                <button id="btn-unsub" >Unsubscribe</button>
-                            </center>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
         <!-- column 1 -->
         <div class="col">
             <div class="card">
@@ -84,36 +31,20 @@
 
                             <input type="text" class="form-control" id="input-broker-ws" value="wss://test.mosquitto.org:8081/mqtt"><br>
 
-                            <button id="btn-connect">Connect</button>
+                            <button id="btn-connect">ON</button>
 
-                            <button class="btn-disconnect">Disconnect</button>
+                            <button class="btn-disconnect">OF</button>
                         </div>
                     </center>
                     <label for="status" id ="sta">Status:</label>
 
                     <center>
-                        <p id="status"><b><i>Disconnected</i></b></p>
+                        <p id="status"><b><i>Connected</i></b></p>
                     </center>
 
                 </div>
             </div>
         </div>
-        
-    
-        <!-- row1 -->
-        <br>
-        <h4>Message</h4>
-        <div class="table">
-            <table>
-                <tr>
-                    <th class="card-header">Topic</th>
-                    <th class="card-header">Payload</th>
-                    <th class="card-header">Timestamp</th>
-                </tr>
-            </table>
-        </div>
-
-        
         <script src="browserMqtt.js"></script>
         <script src="controller.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
