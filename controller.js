@@ -21,7 +21,9 @@ client.on("connect",function(){
     client.publish(topic, message);
   });// end connect
   $(".btn-disconnect").click(function () {
-    
+    var topic = "annabelle/device/status";
+    var message = "turned Off "+moment().format('MMMM Do YYYY, h:mm:ss a');
+    client.publish(topic, message);
     $("#status").text("The device is currently Turned OFF!")
     $("#status").css("color", "red")
     console.log("OFF")
